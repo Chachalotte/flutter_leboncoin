@@ -83,13 +83,12 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Column(
         children : [
           //Logo
-
           Container(
             height : 80,
             decoration : const BoxDecoration(
                 shape : BoxShape.circle,
                 image : DecorationImage(
-                    image : NetworkImage("https://medias.pourlascience.fr/api/v1/images/view/5d1b663a8fe56f77c8671165/wide_1300/image.jpg"),
+                    image : NetworkImage("https://firebasestorage.googleapis.com/v0/b/flutter-3d263.appspot.com/o/33b78e66ba000e27d801485c5a9d9697.jpg?alt=media&token=db56b58e-5463-43c2-90bf-60c24f945467"),
                     fit : BoxFit.fill
 
                 )
@@ -199,7 +198,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
           //Bouton
           const SizedBox(height : 10),
-
           ElevatedButton(
               onPressed : (){
                 if(isregister == true){
@@ -210,7 +208,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   // Fonction pour se connecter
                   connexion();
                 }
-
 
               },
               child : Text("Validation")
