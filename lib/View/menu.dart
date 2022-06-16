@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:ipssi_flutter_rendu/Services/librairie.dart';
-import 'package:ipssi_flutter_rendu/View/MyDrawer.dart';
+import 'package:ipssi_flutter_rendu/View/Accueil.dart';
 
-class dashBoard extends StatefulWidget {
-
-
-
+class menu extends StatefulWidget {
   @override
   State<StatefulWidget> createState(){
-    return dashboardState();
+    return menuState();
   }
 }
 
-class dashboardState extends State<dashBoard>{
+class menuState extends State<menu>{
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -20,16 +17,16 @@ class dashboardState extends State<dashBoard>{
         width: MediaQuery.of(context).size.width/2,
         height: MediaQuery.of(context).size.height,
         color: Colors.white,
-        child: MyDrawer(),
+        child: Accueil(),
       ),
 
       appBar : AppBar(
-        title : const Text("Ma deuxième page"),
-        backgroundColor: Colors.green,
+        title : const Text("Listing"),
+        backgroundColor: Colors.red,
       ),
       backgroundColor: Colors.yellow,
       body : Center(
-          child : Text("${GlobalUser.id}")
+          child : Text("Que souhaitez-vous faire ?")
       ),
     );
   }

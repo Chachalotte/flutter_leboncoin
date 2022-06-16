@@ -7,18 +7,13 @@ import 'package:ipssi_flutter_rendu/Services/FirestoreHelper.dart';
 import 'package:ipssi_flutter_rendu/Services/global.dart';
 import 'package:file_picker/file_picker.dart';
 
-class MyDrawer extends StatefulWidget{
+class Accueil extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return MyDrawerState();
+    return AccueilState();
   }
-
 }
-
-
-
-class MyDrawerState extends  State<MyDrawer>{
+class AccueilState extends  State<Accueil>{
   //Variable
   String? nomImage;
   String? urlImage;
@@ -47,7 +42,7 @@ class MyDrawerState extends  State<MyDrawer>{
 
                   ),
                   onTap: (){
-                    print("J'ai cliquer sur l'image");
+                    print("J'ai cliqué sur l'image");
                     pickImage();
                   },
                 ),
@@ -99,10 +94,7 @@ class MyDrawerState extends  State<MyDrawer>{
       nomImage = resultat.files.first.name;
       bytesImage = resultat.files.first.bytes;
       MyPopUp();
-      
     }
-
-
   }
   
   //  Création de notre popUp

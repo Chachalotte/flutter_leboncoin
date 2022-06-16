@@ -27,8 +27,8 @@ class Utilisateur {
     mail = map["MAIL"];
     provisoire = map["AVATAR"];
     if(provisoire == null){
-      // Une image spécifique que je vais luis donner
-      avatar = "https://firebasestorage.googleapis.com/v0/b/ipssia3bdfirstapplication.appspot.com/o/icon.png?alt=media&token=c3d7cb1c-1d44-4bca-aeb8-63f08d559926";
+      // Image
+      avatar = "https://firebasestorage.googleapis.com/v0/b/flutter-3d263.appspot.com/o/33b78e66ba000e27d801485c5a9d9697.jpg?alt=media&token=db56b58e-5463-43c2-90bf-60c24f945467";
     }
     else
       {

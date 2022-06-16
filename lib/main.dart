@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ipssi_flutter_rendu/Services/FirestoreHelper.dart';
 import 'package:ipssi_flutter_rendu/Services/global.dart';
-import 'package:ipssi_flutter_rendu/View/dashBoard.dart';
+import 'package:ipssi_flutter_rendu/View/menu.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
@@ -21,12 +21,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Vente de goodies',
       theme: ThemeData(
 
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'La belle zone'),
     );
   }
 }
@@ -58,9 +58,6 @@ class _MyHomePageState extends State<MyHomePage> {
   DateTime birthday = DateTime.now();
   bool isregister = true;
   List<bool> selection = [true,false];
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -140,18 +137,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 setState((){
                   nom = value;
                 });
-
-
-
-
               }
-
           ): Container(),
-
-
-
-
-
           (isregister) ? TextField(
               decoration : InputDecoration(
                   hintText : "Entrer votre prénom",
@@ -163,21 +150,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 setState((){
                   prenom = value;
                 });
-
-
-
-
               }
-
           ): Container(),
-
-
-
-
-
-
-
-
           //Champs adresse mail
           const SizedBox(height : 10),
 
@@ -206,8 +180,7 @@ class _MyHomePageState extends State<MyHomePage> {
           //champs mot de passe
 
           const SizedBox(height : 10),
-
-
+          
           TextField(
               obscureText : true,
               decoration : InputDecoration(
@@ -216,18 +189,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 border : OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20)
                 ),
-
               ),
               onChanged : (value){
                 setState((){
                   password = value;
                 });
               }
-
-
           ),
-
-
 
           //Bouton
           const SizedBox(height : 10),
@@ -254,8 +222,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
 
   }
-  
-  
   //Fonction 
   inscription(){
      FirestoreHelper().createUser(nom, birthday, password, mail, prenom).then((value){
@@ -265,7 +231,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
        Navigator.push(context, MaterialPageRoute(
             builder: (context){
-              return dashBoard();
+              return menu();
             }
         ));
        
@@ -275,10 +241,7 @@ class _MyHomePageState extends State<MyHomePage> {
        print(error);
        
      });
-    
   }
-  
-  
   
   connexion(){
     FirestoreHelper().connectUser(mail, password).then((value){
@@ -289,7 +252,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
       Navigator.push(context, MaterialPageRoute(
           builder: (context){
-            return dashBoard();
+            return menu();
           }
       ));
       });
