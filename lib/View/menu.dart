@@ -17,12 +17,28 @@ class menu extends StatefulWidget {
 class menuState extends State<menu>{
   @override
   Widget build(BuildContext context){
+
     return Scaffold(
       drawer: Container(
         width: MediaQuery.of(context).size.width/2,
         height: MediaQuery.of(context).size.height,
         color: Colors.white,
-        child: Accueil(),
+        child: new Column(
+          children: [
+            new Container(
+              child: Accueil()
+              ),
+              const SizedBox(height : 10),
+              ElevatedButton(
+                  onPressed : (){
+                    //fonction pour s'inscrire
+                    publier();
+                  },
+                  child : Text("Modifier mon profil")
+              )
+          ],
+        ),
+
       ),
 
       appBar : AppBar(
@@ -31,38 +47,32 @@ class menuState extends State<menu>{
       ),
       backgroundColor: Colors.yellow,
       body : Center(
-          child : Text("Que souhaitez-vous faire ?")
-      ),
-
-    );
-  }
-
-  Widget selectionMenu(){
-    return SingleChildScrollView(
-      child: Column(
-        children : [
-          //Bouton
-          const SizedBox(height : 10),
-          ElevatedButton(
-              onPressed : (){
-                publier();
-              },
-              child : Text("Publier votre annonce")
-
-          ),
-          const SizedBox(height : 10),
-          ElevatedButton(
-              onPressed : (){
-                listeAnnonce();
-              },
-              child : Text("Voir les annonces en ligne")
-
-          )
-        ],
+        child: new Column(
+          children: [
+            const SizedBox(height : 10),
+            ElevatedButton(
+                onPressed : (){
+                  //fonction pour s'inscrire
+                  publier();
+                },
+                child : Text("Publier une collection")
+            ),
+            const SizedBox(height : 10),
+            ElevatedButton(
+                onPressed : (){
+                  //fonction pour s'inscrire
+                  listeAnnonce();
+                },
+                child : Text("Liste des annonces")
+            )
+          ],
+        ),
       ),
     );
 
+
   }
+
   publier(){
       Navigator.push(context, MaterialPageRoute(
           builder: (context){

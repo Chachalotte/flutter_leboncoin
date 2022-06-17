@@ -88,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
             decoration : const BoxDecoration(
                 shape : BoxShape.circle,
                 image : DecorationImage(
-                    image : NetworkImage("https://firebasestorage.googleapis.com/v0/b/flutter-3d263.appspot.com/o/33b78e66ba000e27d801485c5a9d9697.jpg?alt=media&token=db56b58e-5463-43c2-90bf-60c24f945467"),
+                    image : NetworkImage(""),
                     fit : BoxFit.fill
 
                 )
@@ -198,6 +198,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           //Bouton
           const SizedBox(height : 10),
+
           ElevatedButton(
               onPressed : (){
                 if(isregister == true){
@@ -208,6 +209,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   // Fonction pour se connecter
                   connexion();
                 }
+
 
               },
               child : Text("Validation")
