@@ -84,7 +84,7 @@ class publierState extends State<publierAnnonce>{
             ElevatedButton(
                 onPressed : (){
                   //fonction pour s'inscrire
-                  validerPublication();
+              validerPublication();
                 },
                 child : Text("Valider")
             ),
@@ -95,8 +95,8 @@ class publierState extends State<publierAnnonce>{
     );
   },
 
-  /* validerPublication(){
-    FirestoreHelper().createUser(description, title, prix).then((value){
+  validerPublication(){
+    FirestoreHelper().createUser(title).then((value){
 
       Navigator.push(context, MaterialPageRoute(
           builder: (context){
@@ -110,6 +110,4 @@ class publierState extends State<publierAnnonce>{
 
     });
   }
-
-   */
 }
